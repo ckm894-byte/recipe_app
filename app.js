@@ -221,6 +221,10 @@ function openModal(id) {
       </div>
     ` : ""}
 
+    ${recipe.url ? `
+      <a class="btn-youtube" href="${recipe.url}" target="_blank" rel="noopener noreferrer">▶ 참고 영상 보기</a>
+    ` : ""}
+
     ${recipe.custom ? `
       <button class="btn-delete-recipe" data-id="${recipe.id}">🗑️ 레시피 삭제</button>
     ` : ""}
