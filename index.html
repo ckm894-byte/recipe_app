@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>내 레시피북</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <h1 class="logo">🍳 내 레시피북</h1>
+      <div class="search-wrap">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="요리 이름 또는 재료로 검색..."
+          autocomplete="off"
+        />
+        <span class="search-icon">🔍</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section class="categories">
+      <div class="category-list" id="categoryList"></div>
+    </section>
+
+    <section class="content">
+      <div class="result-info" id="resultInfo"></div>
+      <div class="recipe-grid" id="recipeGrid"></div>
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <div class="empty-icon">🥢</div>
+        <p>검색 결과가 없어요.</p>
+        <span>다른 재료나 요리 이름으로 찾아보세요.</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 레시피 상세 모달 -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="data/recipes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
