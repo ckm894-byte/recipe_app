@@ -11,7 +11,7 @@
   <header class="header">
     <div class="header-inner">
       <h1 class="logo">🍳 내 레시피북</h1>
-      <div class="search-wrap">
+      <div class="search-wrap" style="flex:1;">
         <input
           type="text"
           id="searchInput"
@@ -21,6 +21,7 @@
         />
         <span class="search-icon">🔍</span>
       </div>
+      <button class="add-btn" id="addRecipeBtn">+ 레시피 추가</button>
     </div>
   </header>
 
@@ -47,6 +48,50 @@
     <div class="modal" id="modal">
       <button class="modal-close" id="modalClose">✕</button>
       <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- 레시피 추가 모달 -->
+  <div class="modal-overlay" id="addModalOverlay">
+    <div class="modal" id="addModal">
+      <button class="modal-close" id="addModalClose">✕</button>
+      <div class="modal-content">
+        <h2 class="add-modal-title">✏️ 레시피 추가</h2>
+        <form id="addRecipeForm" novalidate>
+          <div class="form-group">
+            <label class="form-label">요리 이름 <span class="required">*</span></label>
+            <input type="text" id="form-name" class="form-input" placeholder="예: 김치볶음밥" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">카테고리 <span class="required">*</span></label>
+            <select id="form-category" class="form-input form-select"></select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">태그 <span class="form-optional">(선택)</span></label>
+            <input type="text" id="form-tags" class="form-input" placeholder="예: 간단, 매운맛, 야식" />
+            <span class="form-hint">쉼표(,)로 구분</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">재료 <span class="required">*</span></label>
+            <textarea id="form-ingredients" class="form-textarea" placeholder="예: 밥 2공기, 김치 150g, 참기름 1큰술" rows="3"></textarea>
+            <span class="form-hint">쉼표(,)로 구분</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">조리 순서 <span class="required">*</span></label>
+            <textarea id="form-steps" class="form-textarea" placeholder="조리 단계를 한 줄에 하나씩 입력&#10;예:&#10;팬에 기름을 두르고 중불로 예열한다.&#10;김치를 넣고 볶는다." rows="5"></textarea>
+            <span class="form-hint">줄바꿈(Enter)으로 단계 구분</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">팁 <span class="form-optional">(선택)</span></label>
+            <textarea id="form-tip" class="form-textarea" placeholder="조리 팁이나 주의사항" rows="2"></textarea>
+          </div>
+          <div class="form-error" id="formError"></div>
+          <div class="form-actions">
+            <button type="button" class="btn-cancel" id="addModalCancel">취소</button>
+            <button type="submit" class="btn-save">저장</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 
